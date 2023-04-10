@@ -1,32 +1,39 @@
-class Animal
-  def initialize(type, number_of_legs, name = "Unknown")
+class Animal  
+  def initialize(type, number_of_legs, name = "Unknown", owner)
     @id = Random.rand(1..1000)
     @name = name
     @type = type
     @number_of_legs = number_of_legs
+    @owner= owner
   end
-
+  
   def speak
-    "Bla bla bla"
+    if @type == "dog"
+      "Woof, woof"
+    elsif @type == "spider"
+      "..."
+    end
   end
-
+  
   def id
     @id
   end
-
+  
   def type
     @type
   end
-
+  
   def number_of_legs
     @number_of_legs
   end
-
+  
   def name
     @name
   end
-
+  
   def name=(value)
     @name = value
   end
+
+  attr_accessor :owner
 end
