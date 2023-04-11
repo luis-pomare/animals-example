@@ -9,4 +9,8 @@ class Spider < Animal
   def make_a_web
     "www"
   end
-en
+
+  def speak
+    "..."
+  end
+end
