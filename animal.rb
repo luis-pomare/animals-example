@@ -1,4 +1,5 @@
 require "./remover.rb"
+require "./foods.rb"
 
 class Animal  
   attr_accessor :owner
@@ -9,6 +10,7 @@ class Animal
     @type = type
     @number_of_legs = number_of_legs
     @owner= owner
+    @liked_food = NoFood.new()
   end
   
   def speak
@@ -38,5 +40,9 @@ class Animal
   def remove_leg
     remover = Remover.new()
     @number_of_legs = remover.decrease(@number_of_legs)
+  end
+
+  def likes_food?(food)
+    @liked_food.is_liked?(food)
   end
 end
