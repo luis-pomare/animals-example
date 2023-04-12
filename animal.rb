@@ -2,15 +2,15 @@ require "./remover.rb"
 require "./foods.rb"
 
 class Animal  
-  attr_reader :owner
+  attr_reader :owner, :visits
 
   def initialize(type, number_of_legs, name = "Unknown")
     @id = Random.rand(1..1000)
     @name = name
-    @type = type
     @number_of_legs = number_of_legs
-    @owner
+    @type = type
     @liked_food = NoFood.new()
+    @visits = []
   end
   
   def speak
